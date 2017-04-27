@@ -1,5 +1,14 @@
 var socket = io();
 
-socket.on('cconect', function(){
-	console.log('connected to socket.io server');
+socket.on('connect', function(){
+	console.log('connected to client side!');
 });
+
+socket.on('message', function(message){
+	console.log('New Message');
+	console.log(message.text);
+});
+
+socket.emit('message',{
+	text: 'Client is here!'
+})
