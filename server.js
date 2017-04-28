@@ -18,6 +18,7 @@ io.on('connection', function(socket){
 		//socket.broadcast.emit('message',message); //broadcast to all but not self
 	});
 	socket.emit('message',{
+		name: 'System',
 		text: 'Welcome to the chat application',
 		timestamp: moment().valueOf()
 	});
